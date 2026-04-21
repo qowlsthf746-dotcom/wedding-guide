@@ -1,1169 +1,1018 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>혼인서약서 · 성혼선언문 · 덕담 샘플 모음</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
-
-        :root {
-            --black: #f7f5f2;
-            --dark-1: #ffffff;
-            --dark-2: #f0ede8;
-            --dark-3: #e0dbd4;
-            --dark-4: #d0cac2;
-            --gray-1: #b0a89e;
-            --gray-2: #8a8078;
-            --gray-3: #6b6058;
-            --gray-4: #4a3f38;
-            --gray-5: #2c2420;
-            --white: #1a1410;
-            --gold: #8a7250;
-            --gold-dim: #a08a68;
-            --gold-bright: #6b5a3e;
-            --gold-pale: rgba(138, 114, 80, 0.06);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background: var(--black);
-            color: var(--gray-5);
-            line-height: 1.8;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ── Hero ── */
-        .hero {
-            text-align: center;
-            padding: 100px 20px 70px;
-            background: var(--black);
-            position: relative;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 1px;
-            background: var(--gold);
-        }
-
-        .hero-en {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 0.85rem;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 28px;
-        }
-
-        .hero h1 {
-            font-family: 'Noto Serif KR', serif;
-            font-size: 2rem;
-            font-weight: 300;
-            color: var(--white);
-            letter-spacing: 8px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 0.88rem;
-            color: var(--gray-3);
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
-        /* ── Navigation ── */
-        .nav-container {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(247, 245, 242, 0.95);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--dark-3);
-        }
-
-        .nav-tabs {
-            display: flex;
-            justify-content: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .nav-tab {
-            padding: 20px 36px;
-            font-size: 0.85rem;
-            font-weight: 400;
-            color: var(--gray-3);
-            cursor: pointer;
-            border: none;
-            background: none;
-            transition: color 0.3s;
-            font-family: 'Noto Sans KR', sans-serif;
-            letter-spacing: 2px;
-            position: relative;
-        }
-
-        .nav-tab:hover { color: var(--gray-5); }
-
-        .nav-tab.active {
-            color: var(--gold);
-        }
-
-        .nav-tab.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 24px;
-            height: 1px;
-            background: var(--gold);
-        }
-
-        /* ── Main ── */
-        .main-content {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 50px 20px 100px;
-        }
-
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-        .tab-content.active { display: block; }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ── Section Header ── */
-        .section-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .section-header h2 {
-            font-family: 'Noto Serif KR', serif;
-            font-size: 1.4rem;
-            font-weight: 300;
-            color: var(--white);
-            letter-spacing: 6px;
-            margin-bottom: 12px;
-        }
-
-        .section-header p {
-            color: var(--gray-3);
-            font-size: 0.82rem;
-            letter-spacing: 1px;
-            font-weight: 300;
-        }
-
-        /* ── Sub Nav ── */
-        .sub-nav {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 44px;
-            flex-wrap: wrap;
-        }
-
-        .sub-tab {
-            padding: 10px 24px;
-            font-size: 0.8rem;
-            color: var(--gray-3);
-            cursor: pointer;
-            border: 1px solid var(--dark-4);
-            background: transparent;
-            border-radius: 2px;
-            transition: all 0.3s;
-            font-family: 'Noto Sans KR', sans-serif;
-            letter-spacing: 1px;
-        }
-
-        .sub-tab:hover {
-            border-color: var(--gray-2);
-            color: var(--gray-5);
-        }
-
-        .sub-tab.active {
-            background: var(--gold);
-            color: #ffffff;
-            border-color: var(--gold);
-            font-weight: 500;
-        }
-
-        .sub-content { display: none; animation: fadeIn 0.4s ease; }
-        .sub-content.active { display: block; }
-
-        /* ── Card ── */
-        .card {
-            background: var(--dark-1);
-            border: 1px solid var(--dark-3);
-            padding: 52px 48px;
-            margin-bottom: 32px;
-            position: relative;
-            transition: border-color 0.3s;
-        }
-
-        .card:hover {
-            border-color: var(--gray-1);
-        }
-
-        .card-badge {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 0.75rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--gold-dim);
-            margin-bottom: 8px;
-        }
-
-        .card-title {
-            font-family: 'Noto Serif KR', serif;
-            font-size: 1.3rem;
-            font-weight: 400;
-            color: var(--white);
-            text-align: center;
-            margin-bottom: 8px;
-            letter-spacing: 6px;
-        }
-
-        .card-subtitle {
-            font-size: 0.78rem;
-            color: var(--gray-3);
-            text-align: center;
-            margin-bottom: 36px;
-            letter-spacing: 2px;
-            font-weight: 300;
-        }
-
-        /* ── Vow Lines ── */
-        .vow-line {
-            padding: 12px 0;
-            border-bottom: 1px solid var(--dark-3);
-            line-height: 1.9;
-        }
-
-        .vow-line:last-child { border-bottom: none; }
-
-        .speaker {
-            font-weight: 500;
-            font-size: 0.82rem;
-            margin-right: 8px;
-            letter-spacing: 1px;
-        }
-
-        .speaker.groom { color: var(--gray-4); }
-        .speaker.bride { color: var(--gold); }
-        .speaker.together { color: var(--gold-bright); }
-
-        .vow-line .text {
-            color: var(--gray-4);
-            font-size: 0.92rem;
-            font-weight: 300;
-        }
-
-        .vow-section-label {
-            text-align: center;
-            font-family: 'Noto Serif KR', serif;
-            font-size: 0.88rem;
-            color: var(--gold-dim);
-            margin: 32px 0 16px;
-            letter-spacing: 4px;
-        }
-
-        /* ── Divider ── */
-        .divider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 16px 0;
-            gap: 16px;
-        }
-
-        .divider::before,
-        .divider::after {
-            content: '';
-            height: 1px;
-            width: 40px;
-            background: var(--dark-4);
-        }
-
-        .divider span {
-            color: var(--gold-dim);
-            font-size: 0.6rem;
-            letter-spacing: 2px;
-        }
-
-        /* ── Signature ── */
-        .signature-line {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 28px;
-            border-top: 1px solid var(--dark-3);
-            color: var(--gray-3);
-            font-size: 0.82rem;
-            letter-spacing: 1px;
-        }
-
-        /* ── Declaration ── */
-        .declaration-card {
-            background: var(--dark-1);
-            border: 1px solid var(--dark-3);
-            padding: 56px 48px;
-            margin-bottom: 32px;
-            text-align: center;
-            position: relative;
-            transition: border-color 0.3s;
-        }
-
-        .declaration-card:hover { border-color: var(--gray-1); }
-
-        .declaration-card .card-title {
-            color: var(--gold);
-            letter-spacing: 8px;
-        }
-
-        .declaration-text {
-            font-family: 'Noto Serif KR', serif;
-            font-size: 0.95rem;
-            line-height: 2.2;
-            color: var(--gray-4);
-            max-width: 500px;
-            margin: 0 auto;
-            word-break: keep-all;
-            font-weight: 300;
-        }
-
-        .blank {
-            display: inline-block;
-            min-width: 56px;
-            border-bottom: 1px solid var(--gray-2);
-            margin: 0 4px;
-        }
-
-        .highlight { color: var(--gold); font-weight: 400; }
-
-        .declaration-seal {
-            margin-top: 36px;
-            width: 48px;
-            height: 48px;
-            border: 1px solid var(--gold-dim);
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold-dim);
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-            opacity: 0.5;
-        }
-
-        /* ── Blessing ── */
-        .blessing-card {
-            background: var(--dark-1);
-            border: 1px solid var(--dark-3);
-            padding: 52px 48px;
-            margin-bottom: 32px;
-            position: relative;
-            transition: border-color 0.3s;
-        }
-
-        .blessing-card:hover { border-color: var(--gray-1); }
-
-        .blessing-card .card-title {
-            color: var(--white);
-            font-size: 1.2rem;
-            margin-bottom: 32px;
-            letter-spacing: 4px;
-        }
-
-        .blessing-text {
-            font-size: 0.92rem;
-            line-height: 2;
-            color: var(--gray-4);
-            word-break: keep-all;
-            font-weight: 300;
-        }
-
-        .blessing-text p { margin-bottom: 20px; }
-
-        /* ── MC Vow ── */
-        .mc-vow { text-align: center; font-family: 'Noto Serif KR', serif; }
-
-        .mc-vow .mc-names {
-            font-size: 0.95rem;
-            margin-bottom: 36px;
-            color: var(--gray-4);
-            letter-spacing: 2px;
-            line-height: 2;
-        }
-
-        .mc-vow .mc-body {
-            font-size: 1.05rem;
-            line-height: 2.4;
-            color: var(--gray-5);
-            max-width: 360px;
-            margin: 0 auto;
-            font-weight: 300;
-        }
-
-        .mc-vow .mc-question {
-            margin-top: 32px;
-            font-size: 0.95rem;
-            color: var(--gold);
-            letter-spacing: 4px;
-        }
-
-        .mc-vow .mc-closing {
-            margin-top: 36px;
-            font-size: 0.95rem;
-            line-height: 2.2;
-            color: var(--gray-4);
-            font-weight: 300;
-        }
-
-        /* ── Copy Button ── */
-        .copy-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 7px 16px;
-            font-size: 0.75rem;
-            color: var(--gray-3);
-            background: transparent;
-            border: 1px solid var(--dark-4);
-            cursor: pointer;
-            transition: all 0.3s;
-            font-family: 'Noto Sans KR', sans-serif;
-            letter-spacing: 1px;
-            position: absolute;
-            top: 16px;
-            right: 16px;
-        }
-
-        .copy-btn:hover {
-            border-color: var(--gold-dim);
-            color: var(--gold);
-        }
-
-        .copy-btn.copied {
-            border-color: var(--gold);
-            color: var(--gold);
-        }
-
-        /* ── Card Number ── */
-        .card-number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 28px;
-            height: 28px;
-            border: 1px solid var(--gold-dim);
-            color: var(--gold-dim);
-            font-size: 0.75rem;
-            font-family: 'Cormorant Garamond', serif;
-            margin-bottom: 24px;
-        }
-
-        /* ── Footer ── */
-        .footer {
-            text-align: center;
-            padding: 48px 20px;
-            color: var(--gray-2);
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            border-top: 1px solid var(--dark-3);
-        }
-
-        /* ── Responsive ── */
-        /* ── Mobile: 태블릿 ── */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 1.5rem; letter-spacing: 4px; }
-            .hero { padding: 70px 20px 50px; }
-            .nav-tab { padding: 16px 20px; font-size: 0.82rem; letter-spacing: 1px; }
-            .card, .declaration-card, .blessing-card { padding: 36px 28px; }
-            .sub-tab { padding: 9px 18px; }
-            .copy-btn { position: static; margin-bottom: 16px; }
-        }
-
-        /* ── Mobile: 스마트폰 ── */
-        @media (max-width: 480px) {
-            body {
-                font-size: 15px;
-                line-height: 1.9;
-                -webkit-text-size-adjust: 100%;
-                text-size-adjust: 100%;
-            }
-
-            .hero {
-                padding: 56px 24px 40px;
-            }
-
-            .hero-en {
-                font-size: 0.7rem;
-                letter-spacing: 4px;
-                margin-bottom: 20px;
-            }
-
-            .hero h1 {
-                font-size: 1.25rem;
-                letter-spacing: 3px;
-                margin-bottom: 14px;
-            }
-
-            .hero p {
-                font-size: 0.82rem;
-                line-height: 1.7;
-                word-break: keep-all;
-            }
-
-            /* 네비게이션 */
-            .nav-tabs {
-                gap: 0;
-            }
-
-            .nav-tab {
-                padding: 14px 14px;
-                font-size: 0.8rem;
-                letter-spacing: 0.5px;
-            }
-
-            /* 서브 탭 */
-            .sub-nav {
-                gap: 6px;
-                margin-bottom: 32px;
-            }
-
-            .sub-tab {
-                padding: 9px 14px;
-                font-size: 0.75rem;
-                letter-spacing: 0.5px;
-            }
-
-            /* 섹션 헤더 */
-            .section-header {
-                margin-bottom: 32px;
-            }
-
-            .section-header h2 {
-                font-size: 1.15rem;
-                letter-spacing: 4px;
-            }
-
-            .section-header p {
-                font-size: 0.78rem;
-                word-break: keep-all;
-            }
-
-            /* 카드 */
-            .card, .declaration-card, .blessing-card {
-                padding: 32px 20px;
-                margin-bottom: 20px;
-            }
-
-            .card-title {
-                font-size: 1.1rem;
-                letter-spacing: 4px;
-                margin-bottom: 6px;
-            }
-
-            .card-subtitle {
-                font-size: 0.72rem;
-                letter-spacing: 1px;
-                margin-bottom: 28px;
-            }
-
-            .card-number {
-                width: 24px;
-                height: 24px;
-                font-size: 0.68rem;
-                margin-bottom: 20px;
-            }
-
-            /* 서약서 본문 */
-            .vow-line {
-                padding: 10px 0;
-                line-height: 1.85;
-            }
-
-            .speaker {
-                font-size: 0.78rem;
-                display: inline;
-            }
-
-            .vow-line .text {
-                font-size: 0.88rem;
-                word-break: keep-all;
-            }
-
-            .vow-section-label {
-                font-size: 0.82rem;
-                margin: 24px 0 12px;
-            }
-
-            /* 선언문 */
-            .declaration-text {
-                font-size: 0.88rem;
-                line-height: 2;
-            }
-
-            .declaration-card .card-title {
-                letter-spacing: 5px;
-            }
-
-            /* 덕담 */
-            .blessing-card .card-title {
-                font-size: 1.05rem;
-                letter-spacing: 3px;
-                margin-bottom: 24px;
-            }
-
-            .blessing-text {
-                font-size: 0.88rem;
-                line-height: 1.95;
-                word-break: keep-all;
-            }
-
-            .blessing-text p {
-                margin-bottom: 16px;
-            }
-
-            /* MC 서약 */
-            .mc-vow .mc-names {
-                font-size: 0.88rem;
-            }
-
-            .mc-vow .mc-body {
-                font-size: 0.95rem;
-                line-height: 2.2;
-            }
-
-            .mc-vow .mc-question {
-                font-size: 0.88rem;
-            }
-
-            .mc-vow .mc-closing {
-                font-size: 0.88rem;
-            }
-
-            /* 서명란 */
-            .signature-line {
-                font-size: 0.78rem;
-                margin-top: 32px;
-                padding-top: 20px;
-            }
-
-            /* 복사 버튼 - 모바일 터치 최적화 */
-            .copy-btn {
-                position: static;
-                margin-bottom: 20px;
-                padding: 10px 20px;
-                font-size: 0.75rem;
-                min-height: 40px;
-            }
-
-            /* 구분선 */
-            .divider { margin: 12px 0; }
-            .divider::before, .divider::after { width: 28px; }
-
-            /* 빈칸 */
-            .blank { min-width: 44px; }
-
-            /* 메인 콘텐츠 */
-            .main-content {
-                padding: 32px 16px 60px;
-            }
-
-            /* 푸터 */
-            .footer {
-                padding: 32px 20px;
-                font-size: 0.68rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>혼인서약서 · 성혼선언문 · 덕담 샘플 모음</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --bg:        #f7f5f2;
+  --card:      #ffffff;
+  --border-1:  #e8e4dd;
+  --border-2:  #d8d2c7;
+  --text-1:    #2c2420;
+  --text-2:    #4a3f38;
+  --text-3:    #6b6058;
+  --text-4:    #8a8078;
+  --gold:      #8a7250;
+  --gold-dim:  #a08a68;
+  --gold-dark: #6b5a3e;
+  --pink:      #b8846f;
+  --blue:      #6a7d91;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--text-1);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+}
+
+/* ── Hero ── */
+.hero {
+  text-align: center;
+  padding: 100px 20px 70px;
+  position: relative;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+}
+.hero-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+.hero h1 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--text-1);
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 0.88rem;
+  color: var(--text-3);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* ── Nav ── */
+.nav-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 245, 242, 0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-2);
+}
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.nav-tab {
+  padding: 20px 36px;
+  background: none;
+  border: none;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-3);
+  letter-spacing: 2px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+}
+.nav-tab:hover { color: var(--text-1); }
+.nav-tab.active { color: var(--gold-dark); font-weight: 500; }
+.nav-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: var(--gold);
+}
+
+/* ── Main ── */
+.main-content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeIn 0.4s; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.section-header h2 {
+  font-family: 'Noto Serif KR', serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 6px;
+  color: var(--text-1);
+  margin-bottom: 14px;
+}
+.section-header p {
+  font-size: 0.85rem;
+  color: var(--text-3);
+  letter-spacing: 1px;
+}
+
+/* ── Sub Nav ── */
+.sub-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.sub-tab {
+  padding: 10px 22px;
+  background: transparent;
+  border: 1px solid var(--border-2);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text-3);
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.sub-tab:hover { border-color: var(--gold-dim); color: var(--gold-dark); }
+.sub-tab.active {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #fff;
+}
+.sub-content { display: none; }
+.sub-content.active { display: block; animation: fadeIn 0.3s; }
+
+/* ── Card ── */
+.card, .declaration-card, .blessing-card {
+  background: var(--card);
+  padding: 48px 44px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border-1);
+  position: relative;
+  transition: box-shadow 0.3s;
+}
+.card:hover, .declaration-card:hover, .blessing-card:hover {
+  box-shadow: 0 4px 24px rgba(138, 114, 80, 0.08);
+}
+
+.card-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--gold-dim);
+  color: var(--gold-dim);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  margin-bottom: 26px;
+}
+
+.card-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 8px;
+  color: var(--text-1);
+  margin-bottom: 8px;
+  text-align: center;
+}
+.card-subtitle {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-3);
+  letter-spacing: 2px;
+  margin-bottom: 36px;
+  font-weight: 300;
+}
+
+/* ── Vow Line ── */
+.vow-line {
+  padding: 12px 0;
+  line-height: 1.9;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.vow-line .speaker {
+  flex-shrink: 0;
+  font-family: 'Noto Serif KR', serif;
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  min-width: 48px;
+}
+.vow-line .speaker.groom { color: var(--blue); }
+.vow-line .speaker.bride { color: var(--pink); }
+.vow-line .speaker.together { color: var(--gold-dark); }
+.vow-line .text {
+  flex: 1;
+  font-size: 0.95rem;
+  color: var(--text-2);
+  line-height: 1.95;
+}
+
+.vow-section-label {
+  font-family: 'Noto Serif KR', serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--gold-dark);
+  letter-spacing: 6px;
+  text-align: center;
+  margin: 28px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-1);
+}
+.vow-section-label:first-child { margin-top: 0; }
+
+.vow-centered {
+  text-align: center;
+  font-family: 'Noto Serif KR', serif;
+  line-height: 2.3;
+  font-size: 0.98rem;
+  color: var(--text-2);
+  padding: 12px 0;
+}
+
+.divider {
+  text-align: center;
+  color: var(--gold-dim);
+  margin: 18px 0;
+  font-size: 0.75rem;
+  letter-spacing: 6px;
+}
+
+.signature-line {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-3);
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-1);
+  letter-spacing: 1px;
+}
+
+/* ── Declaration ── */
+.declaration-text {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.96rem;
+  line-height: 2.2;
+  color: var(--text-2);
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+.declaration-text.left {
+  text-align: left;
+  max-width: 580px;
+}
+.declaration-text .highlight {
+  color: var(--gold-dark);
+  font-weight: 500;
+}
+.declaration-seal {
+  text-align: center;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.4rem;
+  color: var(--gold);
+  margin-top: 32px;
+  opacity: 0.7;
+}
+.declaration-card .card-number { margin: 0 auto 26px; }
+
+/* ── Blessing ── */
+.blessing-text {
+  font-size: 0.95rem;
+  line-height: 1.95;
+  color: var(--text-2);
+  font-weight: 300;
+}
+.blessing-text p {
+  margin-bottom: 18px;
+}
+.blessing-text p:last-child { margin-bottom: 0; }
+
+.blessing-address {
+  display: inline-block;
+  font-weight: 500;
+  color: var(--gold-dark);
+  margin-top: 6px;
+}
+
+/* ── MC Vow ── */
+.mc-vow {
+  text-align: center;
+  font-family: 'Noto Serif KR', serif;
+  padding: 16px 0;
+}
+.mc-vow .mc-names {
+  font-size: 1rem;
+  margin-bottom: 32px;
+  color: var(--text-2);
+  letter-spacing: 2px;
+  line-height: 2;
+}
+.mc-vow .mc-body {
+  font-size: 1.05rem;
+  line-height: 2.4;
+  color: var(--text-1);
+  max-width: 360px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+.mc-vow .mc-question {
+  margin-top: 36px;
+  font-size: 1rem;
+  color: var(--gold-dark);
+  letter-spacing: 8px;
+  font-weight: 500;
+}
+.mc-vow .mc-closing {
+  margin-top: 32px;
+  font-size: 0.92rem;
+  line-height: 2.2;
+  color: var(--text-3);
+  font-weight: 300;
+}
+
+/* ── Copy Button ── */
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  font-size: 0.72rem;
+  color: var(--text-3);
+  background: transparent;
+  border: 1px solid var(--border-2);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: 1.5px;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+.copy-btn:hover { border-color: var(--gold-dim); color: var(--gold-dark); }
+.copy-btn.copied {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #fff;
+}
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--text-4);
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  border-top: 1px solid var(--border-1);
+  font-family: 'Cormorant Garamond', serif;
+}
+.footer .by {
+  display: block;
+  margin-top: 10px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  color: var(--text-4);
+}
+
+/* ── Blank underline helper ── */
+.blank {
+  display: inline-block;
+  min-width: 60px;
+  border-bottom: 1px solid var(--border-2);
+  margin: 0 3px;
+  vertical-align: baseline;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .hero { padding: 70px 20px 50px; }
+  .hero h1 { font-size: 1.5rem; letter-spacing: 4px; }
+  .nav-tab { padding: 16px 20px; font-size: 0.85rem; letter-spacing: 1px; }
+  .card, .declaration-card, .blessing-card { padding: 36px 24px; }
+  .sub-tab { padding: 9px 16px; font-size: 0.78rem; }
+  .copy-btn { position: static; margin-bottom: 18px; }
+  .vow-line { flex-direction: column; gap: 4px; }
+  .vow-line .speaker { min-width: auto; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 15px; }
+  .hero { padding: 56px 24px 40px; }
+  .hero-en { font-size: 0.7rem; letter-spacing: 4px; }
+  .hero h1 { font-size: 1.25rem; letter-spacing: 3px; }
+  .hero p { font-size: 0.8rem; }
+  .nav-tabs { gap: 0; }
+  .nav-tab { padding: 14px 12px; font-size: 0.78rem; letter-spacing: 0.5px; }
+  .sub-nav { gap: 6px; margin-bottom: 32px; }
+  .sub-tab { padding: 9px 14px; font-size: 0.74rem; letter-spacing: 0.5px; }
+  .section-header h2 { font-size: 1.15rem; letter-spacing: 4px; }
+  .section-header p { font-size: 0.78rem; }
+  .card, .declaration-card, .blessing-card { padding: 30px 18px; margin-bottom: 20px; }
+  .card-title { font-size: 1.05rem; letter-spacing: 4px; }
+  .card-subtitle { font-size: 0.7rem; letter-spacing: 1.5px; margin-bottom: 26px; }
+  .vow-line .text { font-size: 0.88rem; }
+  .declaration-text { font-size: 0.9rem; line-height: 2; }
+  .blessing-text { font-size: 0.9rem; line-height: 1.92; }
+  .blessing-text p { margin-bottom: 15px; }
+  .mc-vow .mc-body { font-size: 0.95rem; line-height: 2.2; }
+  .mc-vow .mc-question { font-size: 0.9rem; letter-spacing: 5px; }
+  .footer { padding: 32px 20px; font-size: 0.7rem; }
+  .main-content { padding: 32px 14px 60px; }
+  .blank { min-width: 44px; }
+}
+</style>
 </head>
 <body>
 
 <!-- Hero -->
 <div class="hero">
-    <div class="hero-en">Wedding Ceremony Guide</div>
-    <h1>서약서 · 선언문 · 덕담</h1>
-    <p>두 분의 결혼식에 어울리는 스타일을 선택해 주세요</p>
+  <div class="hero-en">Wedding Ceremony Guide</div>
+  <h1>서약서 · 선언문 · 덕담</h1>
+  <p>두 분의 결혼식에 어울리는 스타일을 선택해 주세요</p>
 </div>
 
-<!-- Navigation -->
+<!-- Nav -->
 <div class="nav-container">
-    <div class="nav-tabs">
-        <button class="nav-tab active" onclick="showTab('vow')">혼인서약서</button>
-        <button class="nav-tab" onclick="showTab('declaration')">성혼선언문</button>
-        <button class="nav-tab" onclick="showTab('blessing')">덕담</button>
-    </div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showTab(event,'vow')">혼인서약서</button>
+    <button class="nav-tab" onclick="showTab(event,'declaration')">성혼선언문</button>
+    <button class="nav-tab" onclick="showTab(event,'blessing')">덕담</button>
+  </div>
 </div>
 
-<!-- Main Content -->
 <div class="main-content">
 
-    <!-- ═══ 혼인서약서 ═══ -->
-    <div id="tab-vow" class="tab-content active">
-        <div class="section-header">
-            <h2>혼인서약서</h2>
-            <p>다양한 스타일의 서약서 중 두 분에게 어울리는 것을 골라보세요</p>
-        </div>
-
-        <div class="sub-nav">
-            <button class="sub-tab active" onclick="showSub('vow','standard')">무난한 서약서</button>
-            <button class="sub-tab" onclick="showSub('vow','witty')">위트 있는 서약서</button>
-            <button class="sub-tab" onclick="showSub('vow','mc')">사회자 대신 서약</button>
-        </div>
-
-        <!-- 무난한 서약서 -->
-        <div id="sub-vow-standard" class="sub-content active">
-
-            <div class="card" id="standard1">
-                <button class="copy-btn" onclick="copyCard('standard1')">COPY</button>
-                <div class="card-number">1</div>
-                <div class="card-title">혼 인 서 약 서</div>
-                <div class="card-subtitle">대화형 · 다정한 스타일</div>
-
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">첫째, 중요한 일은 항상 아내와 의논하겠습니다. 아내 말은 항상 옳습니다.</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">둘째, "고마워""사랑해""행복해"라는 표현을 많이 하겠습니다. 그 중에서도 남편이 세상에서 제일 좋아하는 말인 잘생겼다를 가장 많이 하겠습니다.</span></div>
-
-                <div class="divider"><span>&#10022;</span></div>
-
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">셋째, 피부관리 받는 건 좋아하는 신부가 다녀와서, "나 어때?" 라고 물으면 정말 뭐가 달라졌는지 모르겠더라도 항상 예쁘다 아름답다라고 칭찬해 주겠습니다</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">넷째, 항상 남편의 절친한 친구가 되어, 힘든 일이 있을 때던 술 한잔 같이 기울이는 신부가 되겠습니다.</span></div>
-
-                <div class="divider"><span>&#10022;</span></div>
-
-                <div class="vow-line"><span class="speaker together">함께 :</span><span class="text">함께한 날보다 앞으로 함께 할 날들이 더 많기에</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">신부에게 반해버렸던 첫 만남을 기억하고</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">오늘 이 행복이 당신 덕분이라는 것에 감사하며</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">다음 생에도 나라는 남자를 선택할 수 있도록</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">다음 생에도 나라는 여자를 알아볼 수 있도록</span></div>
-
-                <div class="divider"><span>&#10022;</span></div>
-
-                <div class="vow-line"><span class="speaker together">함께 :</span><span class="text">늘 서로가 서로를 존중하며 누구보다 행복한 부부가 될 것을 맹세합니다</span></div>
-                <div class="signature-line">______년 ____월 ____일 신랑_______, 신부_______</div>
-            </div>
-
-            <div class="card" id="standard2">
-                <button class="copy-btn" onclick="copyCard('standard2')">COPY</button>
-                <div class="card-number">2</div>
-                <div class="card-title">혼 인 서 약 서</div>
-                <div class="card-subtitle">약속형 · 진지한 스타일</div>
-
-                <div class="vow-line"><span class="speaker together">함께 :</span><span class="text">서로 다른 길을 걸어온 저희 두 사람이 이제 부부의 연으로 한 길을 걸어가고자 합니다.</span></div>
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">평생 아내만을 사랑하며 가정의 행복을 최우선으로 생각하는 남편이 되겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">내가 행복해지는 것보다 더 행복해지는 길을 선택하겠습니다. 어떻게? 아내가 되겠습니다.</span></div>
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">서로의 차이를 인정하며, 있는 그대로 이해하고 존중하겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">서로의 다름을 받아들이보다는, 부족함을 채워줄 수 있음에 감사하겠습니다.</span></div>
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">아내가 생각나는 퇴근길에, 장미 한 송이 선물할 수 있는 남편이 되겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">누구보다도 남편의 마음을 가장 잘 예뻐할 수 있는 아내가 되겠습니다.</span></div>
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker together">함께 :</span><span class="text">이 세상의 행복한 별 받으러 가보는 하나님의 인도하심과 도우심으로 행복한 가정이 되어 서로에게 감사하며 여기 와주신 모든 분을 앞에서 서약합니다</span></div>
-                <div class="signature-line">______년 ____월 ____일 신랑_______, 신부_______</div>
-            </div>
-
-            <div class="card" id="standard3">
-                <button class="copy-btn" onclick="copyCard('standard3')">COPY</button>
-                <div class="card-number">3</div>
-                <div class="card-title">혼 인 서 약 서</div>
-                <div class="card-subtitle">감동형 · 로맨틱 스타일</div>
-
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">오늘 이 순간 우리 부모님, 먼을 밝혀 줄을 먼저 모든 분들에 감사드립니다. 당신과 행복 함께할 수 있다는 사실이 진심으로 행복합니다.</span></div>
-                <div class="vow-line"><span class="text">나 ______은 오늘 세상에서 가장 소중한 당신을 행복의 편대로 맞이합니다. 앞으로의 긴 여정 속 나에게 주어진 단 한 번의 시간을 당신에게 바치며, 내가 진심한 마음으로 나에게 물려 줄 자여주는 당신, 그 아름다운 모습을 평생 지켜주는 남편이 되겠습니다.</span></div>
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">나 ______는 세상에서 가장 소중한 그대를 남편으로 맞이하며, 내가 사랑하였고 바라보았고 선택한 당신과 함께 할 이 길이, 당신이 원하셨던 그 모습을 언제나 가슴에 새기며 감사하겠습니다.</span></div>
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">당신의 든든한 버팀목이 되어주겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">당신이 해주는 음식을 맛있게 맛있게 비를 맞으며 맛있게 먹겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">당신의 자랑스러운 남편이 될 것입니다.</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">당신이 사랑스러운 아내가 되겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">행복 같은 꿈을 꾸겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">그 꿈이 현실이 되도록 노력하겠습니다.</span></div>
-                <div class="signature-line">______년 ____월 ____일 신랑_______, 신부_______</div>
-            </div>
-
-            <div class="card" id="standard4">
-                <button class="copy-btn" onclick="copyCard('standard4')">COPY</button>
-                <div class="card-number">4</div>
-                <div class="card-title">혼 인 서 약 서</div>
-                <div class="card-subtitle">전통형 · 격식 있는 스타일</div>
-
-                <div class="vow-line" style="text-align:center; line-height:2.4; font-family:'Noto Serif KR',serif; font-size:0.98rem;">
-                    <span class="text">
-                        나 신랑 ______는 ______ 양을 아내로 맞이하며<br>
-                        어떠한 경우라도 신부를 항시 사랑하고<br>
-                        존중하며, 어른을 공경하고 진실한<br>
-                        남편으로서의 도리를 다할 것을<br>
-                        굳게 맹세합니다.<br><br>
-                        나 신부 ______은 ______ 군을 남편으로 맞이하며<br>
-                        어떠한 경우라도 신랑을 항시 사랑하고<br>
-                        존중하며, 어른을 공경하고 진실한<br>
-                        아내로서의 도리를 다할 것을<br>
-                        굳게 맹세합니다.
-                    </span>
-                </div>
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker together">함께 :</span><span class="text">지금 이 마음 그대로 당신과 영원히 함께할 것을, 저희 두 사람의 앞날을 축복하러 모여주신 여러 소중한 분들 앞에서 서약합니다.</span></div>
-                <div class="signature-line">______년 ____월 ____일 신랑_______, 신부_______</div>
-            </div>
-        </div>
-
-        <!-- 위트 있는 서약서 -->
-        <div id="sub-vow-witty" class="sub-content">
-
-            <div class="card" id="witty1">
-                <button class="copy-btn" onclick="copyCard('witty1')">COPY</button>
-                <div class="card-number">1</div>
-                <div class="card-title">혼 인 서 약 서</div>
-                <div class="card-subtitle">감성 + 위트 스타일</div>
-
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">세상에서 가장 소중한 그대를 세대로 얻어냈습니다, 함께는 남보다 앞으로 더 함께할 날이 더 많은데 행복하겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">작은 아쉬움에도 함께 눈물짓이야나요, 당신, 그 따뜻 마음을 평생 같아 연어주는 남편이 되겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">나의 이야기를 마음으로 들어주고 든든한 울타리가 되어주고, 당신이 만들어준 인연과 감사는 아내에게 되돌려 드리겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">운전을 좋아하는 아내를 위해 뒤를 나서지 않고 전정해 가지어주는 남편이 되겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">뭐가 불고리기 열기가 쉽지 않아도 남편의 빼지가 뿌리지지 않고 늘 함을 닦아 되는 풀이 되겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">매일 매일의 마쓰다 충족의 즐거째 관을 굳이는 일은 실도록 하겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">정은 걸로 도 매경까지 맹맹라 머시 수 있는 요 리면 해가지 되겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">비지떡으로 그 부었이도, 오늘 당신과 나에게 새로운 삶의 든든한 김잡이가 될 것을 맹세합니다.</span></div>
-                <div class="signature-line">______년 ____월 ____일 신랑_______, 신부_______</div>
-            </div>
-
-            <div class="card" id="witty2">
-                <button class="copy-btn" onclick="copyCard('witty2')">COPY</button>
-                <div class="card-number">2</div>
-                <div class="card-title">혼 인 서 약 서</div>
-                <div class="card-subtitle">생활밀착형 · 재미있는 스타일</div>
-
-                <div class="vow-section-label">신 랑</div>
-                <div class="vow-line"><span class="text">손목이 약한 아내를 위해 분리수거는 제가 하겠습니다.</span></div>
-                <div class="vow-line"><span class="text">아내가 좋아하는 드라마를 볼 때 옆에 자리를 알보워드리겠습니다.</span></div>
-                <div class="vow-line"><span class="text">아내가 힘들 때 나가서 밥을 사주겠습니다.</span></div>
-                <div class="vow-line"><span class="text">싸우다가도 먼저 풀어주는 대인배가 되겠습니다.</span></div>
-                <div class="vow-line"><span class="text">기념일에는 언제나 로맨틱한 사람으로 되겠습니다.</span></div>
-                <div class="vow-line"><span class="text">아내 앞에서 드라이스 좋아하는 거 더 대지 않겠습니다.</span></div>
-
-                <div class="vow-section-label">신 부</div>
-                <div class="vow-line"><span class="text">부위가 좋지 않은 남편을 위해 음식을 쓰레기는 제가 하겠습니다.</span></div>
-                <div class="vow-line"><span class="text">남편이 좋아하는 예능을 볼 때 편안한 자리를 만들어 보겠습니다.</span></div>
-                <div class="vow-line"><span class="text">남편의 건강을 책임질 요리사가 되겠습니다.</span></div>
-                <div class="vow-line"><span class="text">싸우다가도 먼저에 부루 뿌리는 아내가 되겠습니다.</span></div>
-                <div class="vow-line"><span class="text">소원을 들을 정도로 수준을 높이는 대는 보렬이 되겠습니다.</span></div>
-                <div class="vow-line"><span class="text">남편 앞에서 슬슬금 좋아하는 거 더 대지 않겠습니다.</span></div>
-
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker together">함께 :</span><span class="text">지금 이 마음 그대로 당신과 영원히 함께할 것을, 저희 두 사람의 앞날을 축복하러 모여주신 여러 소중한 분들 앞에서 서약합니다.</span></div>
-                <div class="signature-line">______년 ____월 ____일 신랑_______, 신부_______</div>
-            </div>
-
-            <div class="card" id="witty3">
-                <button class="copy-btn" onclick="copyCard('witty3')">COPY</button>
-                <div class="card-number">3</div>
-                <div class="card-title">혼 인 서 약 서</div>
-                <div class="card-subtitle">유머러스 · 번호형 스타일</div>
-
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">하나. 남편이 축구를 볼 때 옆에서 같이 봐주는 아내가 되겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">둘. 떡볶이를 좋아하는 아내를 위해 일주일에 한 번이상 떡볶이 투어를 함께 하겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">셋. 남편의 용돈 사용처에 대해 자세히 알려고 하지 않겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">넷. 살 찐견 싫어하는 아내를 위해 지금부터 5kg 이상 찌지 않겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">다섯. 맛은 장담 못하지만 맛있게 먹을 수 있는 요리를 주 2회 책임지겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">여섯. 맛있게 요리해준 아내를 위해 설거지는 제가 하겠습니다</span></div>
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker together">함께 :</span><span class="text">지금 이 마음을 그대로 당신과 영원히 함께할 것을 저희 두사람의 앞날을 축복하러 모여주신 여러 소중한 분들 앞에서 서약합니다</span></div>
-                <div class="signature-line">______년 ____월 ____일 신랑_______, 신부_______</div>
-            </div>
-
-            <div class="card" id="witty4">
-                <button class="copy-btn" onclick="copyCard('witty4')">COPY</button>
-                <div class="card-number">4</div>
-                <div class="card-title">혼 인 서 약 서</div>
-                <div class="card-subtitle">스토리텔링형 · 첫 만남 회상 스타일</div>
-
-                <div class="vow-line"><span class="speaker together">함께 :</span><span class="text">아름다운 꽃이 피고 봄의 시작을 알리는 오늘 귀한 시간내어 이 자리에 함께 해주신 모든 분들에게 감사합니다</span></div>
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">______년 ______월의 어느날 그녀를 처음 봤을때 너무나 아름다워서 깜짝 놀랐습니다</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">첫 데이트에서 애써 여유로운척했지만 손을 떨며 커피를 마시는 그가 귀여워보였습니다.</span></div>
-                <div class="vow-line" style="text-align:center;"><span class="text">또한 생각보다 진중하게 다가오는 그의 모습에 반하게 되었습니다.</span></div>
-                <div class="vow-line" style="text-align:center;"><span class="text">그렇게 우리는 연인이 되어 지금 이 자리에 서게 되었습니다.</span></div>
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker together">함께 :</span><span class="text">소중한 분들을 모신 이 자리에서 신랑 _______, 신부 _______은 약속합니다</span></div>
-                <div class="signature-line">______년 ____월 ____일 신랑_______, 신부_______</div>
-            </div>
-
-            <div class="card" id="witty5">
-                <button class="copy-btn" onclick="copyCard('witty5')">COPY</button>
-                <div class="card-number">5</div>
-                <div class="card-title">혼 인 서 약 서</div>
-                <div class="card-subtitle">에피소드형 · 진솔한 스타일</div>
-
-                <div class="vow-line"><span class="speaker together">함께 :</span><span class="text">저희 두 사람이 부부가 되는 이 자리에서 부모님과 참석하신 내빈 여러분 앞에서 다음을 서약합니다.</span></div>
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">아내는 나의 못난 모습도 좋아해 줬고 힘들어할 때는 언제나 괜찮다고 다독여주었고, 가장 좋은 일이 있을 때는 함께 기뻐해 주었습니다.</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">남편은 어떤 일이 있어도 가장 친한 친구처럼 뭐든 해줄 마음이 충분합니다. 앞에서 변함없이 아내가주는 모습을 결혼을 결심하게 되었습니다.</span></div>
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker together">함께 :</span><span class="text">그 결심이 이루어지는 오늘 이 자리에서</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">_______ 양이여 아내야</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">_______ 군이여 남편아</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">평범한 아내의 말에 귀를 기울이고, 의견이 어기더라도 다투지 않고 대화로 푸는 다정한 남편이 되겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">그런 남편을 보며 늘 고마워하며 배려하는 아내가 되겠습니다.</span></div>
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">아내가 지라는 별이 가장 같이 이 말따라도 내 입맛에 맛이라고 맛있게 먹겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">남편의 귀리, 친구들이 보내는 시간을 아내에 주고 안된다고 하지 않는 아내가 되겠습니다.</span></div>
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">하고 싶은 것, 가고 싶은 곳이 많은 아내를 위해 데이트를 자주 시켜주겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">사고 싶은 것이 많은 남편에게도 부부간 투명해지 만 않는다면 얼마든지 허용하겠습니다. 단, 나무 큰 지출 시에는 의논하겠습니다.</span></div>
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker groom">신랑 :</span><span class="text">다음 생에도 나와 결혼하고 싶게끔 만들겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker bride">신부 :</span><span class="text">그런 남편을 만고 행복하게 사겠습니다.</span></div>
-                <div class="divider"><span>&#10022;</span></div>
-                <div class="vow-line"><span class="speaker together">함께 :</span><span class="text">우리 부모님께 그 어렸을 적부터 큰 체까지 한순간도 쉬지않고 사랑하는 마음에 감사하며, 그 큰 감사를 느끼시도록 아이들은 예쁘게 사랑 하겠습니다. 또 부모님께 효도하며 부모님의 마음을 이해하려 하겠습니다.</span></div>
-                <div class="vow-line"><span class="speaker together">함께 :</span><span class="text">또 오래 저희의 결혼하는 이 자나다가 우여여 정상적으로 마쳐있거 올때오 있으시겠지만, 키위주신 음혜에 감사드리며 이웃 또한 부모님이 키워주신 은혜를 보달드리겠습니다. 몸은 볕이 없어도 항상 찾아뵙겠다 약속을 드리며, 늘 건강하세요, 사랑합니다.</span></div>
-                <div class="vow-line" style="text-align:center; margin-top:16px;"><span class="text">장석에 와주신 여러 어르분께 감사드립니다. 바쁜 하루도 있지 않고 행복하게 살 것을 감사합니다. 감사합니다.</span></div>
-                <div class="signature-line">______년 ____월 ____일 신랑_______, 신부_______</div>
-            </div>
-        </div>
-
-        <!-- 사회자 대신 서약 -->
-        <div id="sub-vow-mc" class="sub-content">
-            <div class="card" id="mc1">
-                <button class="copy-btn" onclick="copyCard('mc1')">COPY</button>
-                <div class="card-title">혼 인 서 약 서</div>
-                <div class="card-subtitle">사회자가 대신 읽어주는 형식</div>
-
-                <div class="mc-vow">
-                    <div class="mc-names">
-                        신랑 __________ 군과<br>
-                        신부 __________ 양은
-                    </div>
-                    <div class="mc-body">
-                        어떠한 경우라도 항시<br>
-                        사랑하고 존중하며 어른을<br>
-                        공경하고 진실한 남편과<br>
-                        아내로서의 도리를<br>
-                        다 할 것을 맹세합니까?
-                    </div>
-                    <div class="mc-question">신랑?&emsp;신부?</div>
-                    <div class="mc-closing">
-                        이로써 두 사람의 약속이<br>
-                        영원하기를 기원합니다.
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- ═══ 혼인서약서 ═══ -->
+  <div id="tab-vow" class="tab-content active">
+    <div class="section-header">
+      <h2>혼인서약서</h2>
+      <p>다양한 스타일의 서약서 중 두 분에게 어울리는 것을 골라보세요</p>
     </div>
 
-    <!-- ═══ 성혼선언문 ═══ -->
-    <div id="tab-declaration" class="tab-content">
-        <div class="section-header">
-            <h2>성혼선언문</h2>
-            <p>주례 없는 결혼식에서 사회자가 낭독하는 성혼선언문</p>
-        </div>
-
-        <div class="declaration-card" id="decl1">
-            <button class="copy-btn" onclick="copyCard('decl1')">COPY</button>
-            <div class="card-number" style="margin:0 auto 24px;">1</div>
-            <div class="card-title">성 혼 선 언 문</div>
-
-            <div class="declaration-text">
-                사랑과 관심으로 참석해 주신<br>
-                양가 친척, 친지 여러분<br>
-                바쁘신 가운데 귀한 시간 내어 주시어<br>
-                진심으로 감사드립니다.<br>
-                신랑 신부님이 새로운 삶을 출발 할 수<br>
-                있도록 관심 가져 주신 점 다시 한 번<br>
-                감사드립니다.<br><br>
-                이제 신랑 <span class="blank"></span> 군과 신부 <span class="blank"></span> 양은<br>
-                일생 동안 고락을 함께 할 부부가 되기를 굳게<br>
-                맹세 하였습니다.<br>
-                이에 혼인이 원만하게 이루어진 것을<br>
-                여러분 앞에서 엄숙히 <span class="highlight">선언 합니다</span>.<br><br>
-                20__. _____. _____.
-            </div>
-            <div class="declaration-seal">印</div>
-        </div>
-
-        <div class="declaration-card" id="decl2">
-            <button class="copy-btn" onclick="copyCard('decl2')">COPY</button>
-            <div class="card-number" style="margin:0 auto 24px;">2</div>
-            <div class="card-title">성 혼 선 언 문</div>
-
-            <div class="declaration-text" style="text-align:left; max-width:560px;">
-                먼저 귀한 시간을 내시어 저희 자녀들의 결혼식에 참석해 주신 대빈 여러분과 가족 친지분께 감사의 말씀을 드립니다.<br><br>
-
-                신랑 <span class="blank"></span> 군과 신부 <span class="blank"></span> 양은<br>
-                그 일가친척과 친지를 모신 자리에서<br>
-                일생 동안 고락을 함께 할 부부가 되기를 굳게 맹세하였습니다. 이에 본인은 이 혼인이 원만하게 이루어진 것을 여러분 앞에서 엄숙히 선언합니다.<br><br>
-
-                이제 부부가 된 신랑과 신부 행복한 결혼 생활을 했으면 좋겠습니다. 양가 부모님을 마음으로 공경하고 형제들과 주위 와에 시간을 깊이 밝히기를 바랍니다.<br><br>
-
-                미래에 좋은 아이의 부모가 되어 건강하고 예쁘게 키웠으면 합니다.<br><br>
-
-                마지막으로 끝에 거른 <span class="blank"></span> 저러 집서구로 보내주시면 사돈어른께 감사의 인사를 드립니다.<br><br>
-
-                ______년 ____월 ____일<br>
-                ________________(아버지 or 어머니)
-            </div>
-            <div class="declaration-seal">印</div>
-        </div>
+    <div class="sub-nav">
+      <button class="sub-tab active" onclick="showSub(event,'vow','standard')">무난한 서약서</button>
+      <button class="sub-tab" onclick="showSub(event,'vow','witty')">위트 있는 서약서</button>
+      <button class="sub-tab" onclick="showSub(event,'vow','mc')">사회자 대독</button>
     </div>
 
-    <!-- ═══ 덕담 ═══ -->
-    <div id="tab-blessing" class="tab-content">
-        <div class="section-header">
-            <h2>부모님 덕담</h2>
-            <p>결혼식에서 부모님이 전하시는 따뜻한 덕담 예시</p>
+    <!-- ── 무난한 ── -->
+    <div id="sub-vow-standard" class="sub-content active">
+
+      <!-- 무난한 1 -->
+      <div class="card" id="standard1">
+        <button class="copy-btn" onclick="copyCard('standard1')">COPY</button>
+        <div class="card-number">1</div>
+        <div class="card-title">혼 인 서 약 서</div>
+        <div class="card-subtitle">전통형 · 격식 있는 서약</div>
+
+        <div class="vow-centered">
+          나 신랑 <span class="blank"></span>는 <span class="blank"></span> 양을 아내로 맞이하며<br>
+          어떠한 경우라도 신부를 항시 사랑하고<br>
+          존중하며, 어른을 공경하고 진실한<br>
+          남편으로서의 도리를 다할 것을<br>
+          굳게 맹세합니다.
         </div>
 
-        <div class="sub-nav">
-            <button class="sub-tab active" onclick="showSub('blessing','groom-father')">신랑 아버지 덕담</button>
-            <button class="sub-tab" onclick="showSub('blessing','bride-father')">신부 아버지 덕담</button>
+        <div class="divider">· · ·</div>
+
+        <div class="vow-centered">
+          나 신부 <span class="blank"></span>은 <span class="blank"></span> 군을 남편으로 맞이하며<br>
+          어떠한 경우라도 신랑을 항시 사랑하고<br>
+          존중하며, 어른을 공경하고 진실한<br>
+          아내로서의 도리를 다할 것을<br>
+          굳게 맹세합니다.
         </div>
 
-        <!-- 신랑 아버지 -->
-        <div id="sub-blessing-groom-father" class="sub-content active">
+        <div class="divider">· · ·</div>
 
-            <div class="blessing-card" id="gf1">
-                <button class="copy-btn" onclick="copyCard('gf1')">COPY</button>
-                <div class="card-number">1</div>
-                <div class="card-title">신랑 아버지 덕담</div>
-
-                <div class="blessing-text">
-                    <p>안녕하십니까 신랑 아버지 <span class="blank"></span>입니다.</p>
-                    <p>바쁜 주말인데도 불구하고 저희 아이들의 결혼을 축복해 주시기 위하여 이 자리에 참석해 주신 많은 내빈 여러분과 가족 친지께 양가를 대신하여 진심으로 감사드립니다.</p>
-                    <p>바쁜 일 속에서도 아들과 함께하는 시간을 많이 갖고자 노력했는데, 더 많이 함께 하지 못함에 아쉽기도 하지만 이렇게나 건강하고 반듯하게 자라준 아들이 기특하고 자랑스럽기만 합니다.</p>
-                    <p>조금 전 양가 친지 및 하객 여러분을 모신 자리에서 신랑 <span class="blank"></span> 군과 신부 <span class="blank"></span> 양이 서로의 있는 모습 그대로를 이해하고 사랑하는 부부가 되겠다고 굳게 맹세했습니다.</p>
-                    <p>서로에게 한 다른 약속들 또한 잘 지킬 것이라고 저는 믿습니다.</p>
-                    <p>이에 양가 가족을 대표하여 두 사람이 아주 예쁜 부부가 되었음을 여러분 앞에 엄숙히 선언합니다. 새롭게 태어난 이들 부부가 행복한 삶을 살아갈 수 있도록 하겠여 러분께서도 두 사람의 앞길을 축복해 주십시오. 감사합니다!</p>
-                </div>
-            </div>
-
-            <div class="blessing-card" id="gf2">
-                <button class="copy-btn" onclick="copyCard('gf2')">COPY</button>
-                <div class="card-number">2</div>
-                <div class="card-title">신랑 아버지 덕담</div>
-
-                <div class="blessing-text">
-                    <p>반갑습니다.</p>
-                    <p>바쁘신 주말에 시간 내어 저희 자녀들 결혼식을 빛내주신 여러 친지분들과 하객분들에게 깊이 감사드립니다.</p>
-                    <p>오늘 저의 아들이 장가가는 날입니다. 예쁘고 착한 딸 하나 얻는 날이기에 기분 정말 좋습니다. 예쁘고 착한 딸아이를 며느리로 보내주신 사돈어른께 감사드립니다. 특이하게, 주례 없이 부모님 덕담으로 한다기에 말주변이 없는 저로서는 무슨 말을 해야 할지 막막하기만 했습니다만 덕담이라기보다는 감사와 부탁의 말씀을 전달하려 합니다.</p>
-                    <p>오늘 며느리와 아들이 자식으로서의 단계를 마치고, 부부로서의 인생이 시작되는 의미 있는 날입니다. 이제 신랑신부는 매일매일 행복하고 건강해야 합니다. 그리고 부모로서의 더 가치 있는 삶이 기다리고 있으니 잘 준비하고 현명한 부모가 되기를 바랍니다.</p>
-                    <p>끝으로, 아들과 며느리에게 한 마디 하겠습니다. 서로 사랑해서 하는 결혼이기에 서로가 선택한 사랑, 영원히 함께해라, 그리고 항상 예쁘고 착한 일만 하길 바란다. 고맙습니다.</p>
-                </div>
-            </div>
-
-            <div class="blessing-card" id="gf3">
-                <button class="copy-btn" onclick="copyCard('gf3')">COPY</button>
-                <div class="card-number">3</div>
-                <div class="card-title">신랑 아버지 덕담</div>
-
-                <div class="blessing-text">
-                    <p>신랑 아버지, <span class="blank"></span>입니다.</p>
-                    <p>바쁘신 가운데도 불구하고 저희 아이들의 결혼식에 참석하여 주신 일가친척 및 친지 여러분들에게 진심으로 감사의 말씀을 드립니다.</p>
-                    <p>저희 아이들이 주례 없이, 의미 있고 뜻깊은 부모님의 말씀을 듣고자 한다하여 말주변이 없는 저로서는 무슨 말을 먼저 해야 할지 막막합니다.</p>
-                    <p>사랑하는 아들 <span class="blank"></span>아,<br>
-                    네가 어느덧 자라서 이렇게 많은 분들의 축복 속에 결혼식을 올리고 새 가정을 꾸린다고 생각하니 머릿속에 많은 생각이 떠오르고 만감이 교차하는구나. 항상 지금처럼 서로를 위하고 아끼며 행복하게 살길 바라고 두 사람 앞에 다가오는 일들을 슬기롭게 잘 헤쳐 나가리라 믿는다. 항상 아내의 편에 서서 보듬어 주고 네 아이의 엄마가 될 아내를 아껴주고 아내가 힘들 때 위로해 주는 책임감이 있는 남편이 되길 바란다.</p>
-                    <p>다음으로 나의 며느리이자 딸인 <span class="blank"></span>아,<br>
-                    아들이 좋은 반려자를 만난 것도 기분이 좋은 일이지만, 나로서는 네가 예쁜 막내딸을 우리 집에 와주어 더욱 기쁜 마음이 드는구나. 남편이 없을 때 남편을 칭찬하고 남편이 있을 때 남편을 존경하고 남편이 괴로워할 때 남편을 잘 위로해 주며, 남편이 아플 때 남편을 돕는 그런 지혜롭고 현명한 아내가 되어라. 오, 나는 항상 너희 부부의 건강과 행복을 영원하고 화목한 가정 안에서 훌륭한 아빠 엄마가 되길 기도할 것이다.</p>
-                    <p>끝으로, 귀히 키우신 따님을 저희 가정에 보내주신 사돈어른께 이 자리를 빌려 감사의 인사를 드립니다. 아울러 귀한 시간을 내어 이 자리에서 함께 축복해 주신 친척 및 친지 여러분께서도 항상 건강하시고 모든 가정에 행복이 가득하시길 빌며, 덕담을 마치겠습니다. 감사합니다.</p>
-                </div>
-            </div>
+        <div class="vow-line">
+          <span class="speaker together">함께</span>
+          <span class="text">지금 이 마음 그대로 당신과 영원히 함께할 것을, 저희 두 사람의 앞날을 축복하러 모여주신 여러 소중한 분들 앞에서 서약합니다.</span>
         </div>
 
-        <!-- 신부 아버지 -->
-        <div id="sub-blessing-bride-father" class="sub-content">
-            <div class="blessing-card" id="bf1">
-                <button class="copy-btn" onclick="copyCard('bf1')">COPY</button>
-                <div class="card-title">신부 아버지 덕담</div>
+        <div class="signature-line">______년 ___월 ___일 &nbsp; 신랑 _______, 신부 _______</div>
+      </div>
 
-                <div class="blessing-text">
-                    <p>우리 사위 <span class="blank"></span>아</p>
-                    <p>내 딸이 좋은 반려자를 만나게 되어 더할 나위 없이 기쁘구나.</p>
-                    <p>지난 <span class="blank"></span>년 두 사람이 잘 지내는 모습을 보면서 앞으로도 서로 보듬어가며 잘 살 거라 아버지는 확신한다.</p>
-                    <p>부족한 부분이 있더라도 서로 상처 주는 말은 하지 말고 대화를 많이 하며 지금처럼 언제나 같은 편이 되거라.</p>
-                    <p>오늘 이 자리의 의미가 거듭 빛나게 되는 화목한 부부가 되기를 바란다.</p>
-                    <p>끝으로 지금 이 자리에 오기까지 고생하신 나의 아내와 반듯한 아들로 훌륭하게 키워주신 사돈 내외분께 진심으로 감사의 말씀을 드리며,</p>
-                    <p>이 자리를 빛내주신 하객분들께 다시 한번 감사드립니다.</p>
-                    <p style="margin-top:32px; color:var(--gray-3);">
-                        ______년 ____ 월 ____ 일<br>
-                        신부 아버지 __________
-                    </p>
-                </div>
-            </div>
+      <!-- 무난한 2 -->
+      <div class="card" id="standard2">
+        <button class="copy-btn" onclick="copyCard('standard2')">COPY</button>
+        <div class="card-number">2</div>
+        <div class="card-title">혼 인 서 약 서</div>
+        <div class="card-subtitle">대화형 · 다정한 서약</div>
+
+        <div class="vow-line">
+          <span class="speaker groom">신랑</span>
+          <span class="text">오늘 이 순간 우리 부부의 연을 맺게 됨을 먼저 모든 분들께 감사드립니다. 당신과 평생 함께할 수 있다는 사실이 진심으로 행복합니다.</span>
         </div>
+        <div class="vow-line">
+          <span class="speaker"></span>
+          <span class="text">나 <span class="blank"></span>은 오늘 세상에서 가장 소중한 당신을 평생의 반려자로 맞이합니다. 언제나 진실한 마음으로 나에게 활짝 미소 지어주는 당신, 그 아름다운 모습을 평생 지켜주는 남편이 되겠습니다.</span>
+        </div>
+
+        <div class="divider">· · ·</div>
+
+        <div class="vow-line">
+          <span class="speaker bride">신부</span>
+          <span class="text">나 <span class="blank"></span>는 세상에서 가장 소중한 그대를 남편으로 맞이합니다. 함께한 날보다 앞으로 함께할 날이 더 많음에 행복합니다.</span>
+        </div>
+        <div class="vow-line">
+          <span class="speaker"></span>
+          <span class="text">나의 이야기를 마음으로 들어주고 든든한 울타리가 되어준 당신, 당신이 곁에 있음에 언제나 감사하는 아내가 되겠습니다.</span>
+        </div>
+
+        <div class="divider">· · ·</div>
+
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text">당신의 든든한 버팀목이 되어주겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">당신의 편안한 안식처가 되어주겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text">당신이 해주는 음식을 항상 맛있게 먹을 것입니다.</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">당신의 건강을 위해 식단을 짜고 요리하겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text">당신의 자랑스러운 남편이 될 것입니다.</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">당신의 사랑스러운 아내가 될 것입니다.</span></div>
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text">함께 같은 꿈을 꾸겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">그 꿈이 이루어질 수 있도록 항상 응원해 주겠습니다.</span></div>
+
+        <div class="divider">· · ·</div>
+
+        <div class="vow-line">
+          <span class="speaker together">함께</span>
+          <span class="text">아름다운 첫 만남을 기억하며 오늘 이 행복이 당신 덕분이라는 것에 늘 감사하겠습니다. 당신 인생의 가장 소중한 반려자가 되어 평생 그대만을 사랑할 것을 여기 계신 모든 분들 앞에서 약속합니다.</span>
+        </div>
+
+        <div class="signature-line">______년 ___월 ___일 &nbsp; 신랑 _______, 신부 _______</div>
+      </div>
+
+      <!-- 무난한 3 -->
+      <div class="card" id="standard3">
+        <button class="copy-btn" onclick="copyCard('standard3')">COPY</button>
+        <div class="card-number">3</div>
+        <div class="card-title">혼 인 서 약 서</div>
+        <div class="card-subtitle">약속형 · 진지한 서약</div>
+
+        <div class="vow-line">
+          <span class="speaker together">함께</span>
+          <span class="text">서로 다른 길을 걸어온 저희 두 사람이 이제 부부의 연으로 한 길을 걸어가고자 합니다.</span>
+        </div>
+
+        <div class="divider">· · ·</div>
+
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text">평생 아내만을 사랑하며 가정의 행복을 최우선으로 생각하는 남편이 되겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">내가 행복해지는 것보다 함께 행복해지는 길을 선택하는 아내가 되겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text">서로의 차이를 인정하며, 있는 그대로 이해하고 존중하겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">서로의 다름을 탓하기보다는, 부족함을 채워줄 수 있음에 감사하겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text">아내가 생각나는 퇴근길에, 장미 한 송이 선물할 수 있는 남편이 되겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">누구보다도 남편의 마음을 가장 잘 헤아릴 수 있는 아내가 되겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text">서로의 인생에 더없이 좋은 친구로 살아가겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">서로를 믿고 의지하며 평생 행복한 부부가 되겠습니다.</span></div>
+
+        <div class="divider">· · ·</div>
+
+        <div class="vow-line">
+          <span class="speaker together">함께</span>
+          <span class="text">이 세상의 행복에 발 맞추기 보다는 하나님의 인도하심과 도우심으로 행복한 가정을 이루며 살아갈 것을 여기 와주신 모든 분들 앞에서 서약합니다.</span>
+        </div>
+
+        <div class="signature-line">______년 ___월 ___일 &nbsp; 신랑 _______, 신부 _______</div>
+      </div>
     </div>
+
+    <!-- ── 위트 있는 ── -->
+    <div id="sub-vow-witty" class="sub-content">
+
+      <!-- 위트 1 -->
+      <div class="card" id="witty1">
+        <button class="copy-btn" onclick="copyCard('witty1')">COPY</button>
+        <div class="card-number">1</div>
+        <div class="card-title">혼 인 서 약 서</div>
+        <div class="card-subtitle">생활밀착형 · 재미있는 약속</div>
+
+        <div class="vow-section-label">신 랑</div>
+        <div class="vow-line"><span class="speaker"></span><span class="text">손목이 약한 아내를 위해 분리수거는 제가 하겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker"></span><span class="text">아내가 좋아하는 드라마를 볼 때 편한 자리를 양보하겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker"></span><span class="text">아내가 힘들 때 나가서 밥을 사주겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker"></span><span class="text">싸우다가도 먼저 풀어주는 대인배가 되겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker"></span><span class="text">기념일에는 언제나 로맨틱한 사랑꾼이 되겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker"></span><span class="text">아내 앞에서 트와이스 좋아하는 거 티 내지 않겠습니다.</span></div>
+
+        <div class="vow-section-label">신 부</div>
+        <div class="vow-line"><span class="speaker"></span><span class="text">비위가 좋지 않은 남편을 위해 음식물 쓰레기는 제가 버리겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker"></span><span class="text">남편이 좋아하는 예능을 볼 때 편안한 자리를 양보하겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker"></span><span class="text">남편의 건강식을 책임지는 요리사가 되겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker"></span><span class="text">싸우다가도 먼저 애교 부리는 여우가 되겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker"></span><span class="text">쇼핑을 줄여 통장 개수를 늘리는데 보탬이 되겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker"></span><span class="text">남편 앞에서 공유 좋아하는 거 티 내지 않겠습니다.</span></div>
+
+        <div class="divider">· · ·</div>
+
+        <div class="vow-line">
+          <span class="speaker together">함께</span>
+          <span class="text">지금 이 마음 그대로 당신과 영원히 함께할 것을, 저희 두 사람의 앞날을 축복하러 모여주신 여러 소중한 분들 앞에서 서약합니다.</span>
+        </div>
+
+        <div class="signature-line">______년 ___월 ___일 &nbsp; 신랑 _______, 신부 _______</div>
+      </div>
+
+      <!-- 위트 2 -->
+      <div class="card" id="witty2">
+        <button class="copy-btn" onclick="copyCard('witty2')">COPY</button>
+        <div class="card-number">2</div>
+        <div class="card-title">혼 인 서 약 서</div>
+        <div class="card-subtitle">감성+위트 · 길잡이형</div>
+
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">세상에서 가장 소중한 그대를 내편으로 맞이합니다. 함께한 날보다 앞으로 함께할 날이 더 많음에 행복합니다.</span></div>
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text">작은 아픔에도 함께 눈물지어주는 당신, 그 여린 마음을 평생 감싸 안아주는 남편이 되겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">나의 이야기를 마음으로 들어주고 든든한 울타리가 되어준 당신, 당신이 곁에 있음에 언제나 감사하는 아내가 되겠습니다.</span></div>
+
+        <div class="divider">· · ·</div>
+
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text">운전을 못하는 아내를 위해 화를 내지 않고 친절히 가르쳐주는 남편이 되겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">화가 풀리지 않아 튕기고 싶어도 남편의 백허그에 뿌리치지 않고 뒤돌아 꼭 안아주는 아내가 되겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text">매일 배불리 먹이지는 못하지만 절대 굶기는 일은 없도록 하겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">맛은 장담 못 하지만 맛있게 먹을 수 있는 요리를 책임지겠습니다.</span></div>
+
+        <div class="divider">· · ·</div>
+
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text">마지막으로 그 무엇이든, 오늘 당신과 나의 새로운 삶의 든든한 길잡이가 될 것을 맹세합니다.</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">어떤 상황에서도 이정표가 되어줄 내 사람, 길잡이가 되어 줄 내 사람, 항상 곁에서 힘이 되어줄 것을 맹세합니다.</span></div>
+
+        <div class="divider">· · ·</div>
+
+        <div class="vow-line">
+          <span class="speaker together">함께</span>
+          <span class="text">지금 이 마음 그대로 당신과 영원히 함께할 것을, 저희 두 사람의 앞날을 축복하러 모여주신 여러 소중한 분들 앞에서 서약합니다.</span>
+        </div>
+
+        <div class="signature-line">______년 ___월 ___일 &nbsp; 신랑 _______, 신부 _______</div>
+      </div>
+
+      <!-- 위트 3 -->
+      <div class="card" id="witty3">
+        <button class="copy-btn" onclick="copyCard('witty3')">COPY</button>
+        <div class="card-number">3</div>
+        <div class="card-title">혼 인 서 약 서</div>
+        <div class="card-subtitle">스토리텔링형 · 첫 만남 회상</div>
+
+        <div class="vow-line">
+          <span class="speaker together">함께</span>
+          <span class="text">아름다운 꽃이 피고 봄의 시작을 알리는 오늘 귀한 시간 내어 이 자리에 함께 해주신 모든 분들에게 감사합니다.</span>
+        </div>
+
+        <div class="divider">· · ·</div>
+
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text"><span class="blank"></span>년 <span class="blank"></span>월의 어느 날, 그녀를 처음 봤을 때 너무나 아름다워서 깜짝 놀랐습니다.</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">첫 데이트에서 애써 여유로운 척했지만 손을 떨며 커피를 마시는 그가 귀여워 보였습니다. 또한 생각보다 진중하게 다가오는 그의 모습에 반하게 되었습니다.</span></div>
+
+        <div class="vow-centered" style="margin: 14px 0;">
+          그렇게 우리는 연인이 되어<br>
+          지금 이 자리에 서게 되었습니다.
+        </div>
+
+        <div class="vow-line">
+          <span class="speaker together">함께</span>
+          <span class="text">소중한 분들을 모신 이 자리에서 신랑 <span class="blank"></span>, 신부 <span class="blank"></span>은 약속합니다.</span>
+        </div>
+
+        <div class="divider">· · ·</div>
+
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text">첫째, 중요한 일은 항상 아내와 의논하겠습니다. 아내 말은 항상 옳습니다.</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">둘째, '고마워' '사랑해' '행복해'라는 표현을 많이 하겠습니다. 그 중에서도 남편이 세상에서 제일 좋아하는 말인 '잘생겼다'를 가장 많이 하겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text">셋째, 피부관리 받는 걸 좋아하는 신부가 다녀와서 '나 어때?' 라고 물으면 정말 뭐가 달라졌는지 모르겠더라도 항상 예쁘다 아름답다라고 칭찬해 주겠습니다.</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">넷째, 항상 남편의 절친한 친구가 되어, 힘든 일이 있을 때면 술 한잔 같이 기울이는 신부가 되겠습니다.</span></div>
+
+        <div class="divider">· · ·</div>
+
+        <div class="vow-line"><span class="speaker together">함께</span><span class="text">함께한 날보다 앞으로 함께 할 날들이 더 많기에</span></div>
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text">신부에게 반해버렸던 첫 만남을 기억하고</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">오늘 이 행복이 당신 덕분이라는 것에 감사하며</span></div>
+        <div class="vow-line"><span class="speaker groom">신랑</span><span class="text">다음 생에도 나라는 남자를 선택할 수 있도록</span></div>
+        <div class="vow-line"><span class="speaker bride">신부</span><span class="text">다음 생에도 나라는 여자를 알아볼 수 있도록</span></div>
+        <div class="vow-line"><span class="speaker together">함께</span><span class="text">늘 서로가 서로를 존중하며 누구보다 행복한 부부가 될 것을 맹세합니다.</span></div>
+
+        <div class="signature-line">______년 ___월 ___일 &nbsp; 신랑 _______, 신부 _______</div>
+      </div>
+    </div>
+
+    <!-- ── 사회자 대독 ── -->
+    <div id="sub-vow-mc" class="sub-content">
+      <div class="card" id="mc1">
+        <button class="copy-btn" onclick="copyCard('mc1')">COPY</button>
+        <div class="card-number">1</div>
+        <div class="card-title">혼 인 서 약 서</div>
+        <div class="card-subtitle">사회자 대독 · 짧고 정중한 표준형</div>
+
+        <div class="mc-vow">
+          <div class="mc-names">
+            신랑 <span class="blank"></span> 군과<br>
+            신부 <span class="blank"></span> 양은
+          </div>
+          <div class="mc-body">
+            어떠한 경우라도 항시<br>
+            사랑하고 존중하며 어른을<br>
+            공경하고 진실한 남편과<br>
+            아내로서의 도리를<br>
+            다 할 것을 맹세합니까?
+          </div>
+          <div class="mc-question">신랑? &nbsp; 신부?</div>
+          <div class="mc-closing">
+            이로써 두 사람의 약속이<br>
+            영원하기를 기원합니다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ 성혼선언문 ═══ -->
+  <div id="tab-declaration" class="tab-content">
+    <div class="section-header">
+      <h2>성혼선언문</h2>
+      <p>사회자 또는 혼주가 낭독하는 성혼선언문</p>
+    </div>
+
+    <!-- 선언문 1 -->
+    <div class="declaration-card" id="decl1">
+      <button class="copy-btn" onclick="copyCard('decl1')">COPY</button>
+      <div class="card-number">1</div>
+      <div class="card-title">성 혼 선 언 문</div>
+      <div class="card-subtitle">사회자 낭독 · 표준형</div>
+
+      <div class="declaration-text">
+        사랑과 관심으로 참석해 주신<br>
+        양가 친척, 친지 여러분<br>
+        바쁘신 가운데 귀한 시간 내어 주시어<br>
+        진심으로 감사드립니다.<br><br>
+
+        신랑 신부님이 새로운 삶을 출발 할 수<br>
+        있도록 관심 가져 주신 점 다시 한 번<br>
+        감사드립니다.<br><br>
+
+        이제 신랑 <span class="blank"></span> 군과 신부 <span class="blank"></span> 양은<br>
+        일생 동안 고락을 함께 할 부부가 되기를 굳게<br>
+        맹세 하였습니다.<br><br>
+
+        이에 혼인이 원만하게 이루어진 것을<br>
+        여러분 앞에서 엄숙히 <span class="highlight">선언 합니다.</span><br><br>
+
+        20<span class="blank"></span>. <span class="blank"></span>. <span class="blank"></span>.<br>
+        <span class="blank" style="min-width:140px;"></span>
+      </div>
+      <div class="declaration-seal">印</div>
+    </div>
+
+    <!-- 선언문 2 -->
+    <div class="declaration-card" id="decl2">
+      <button class="copy-btn" onclick="copyCard('decl2')">COPY</button>
+      <div class="card-number">2</div>
+      <div class="card-title">성 혼 선 언 문</div>
+      <div class="card-subtitle">부모 낭독 · 인사말 포함</div>
+
+      <div class="declaration-text left">
+        먼저 귀한 시간을 내시어 저희 자녀들의 결혼식에 참석해 주신 내빈 여러분과 가족 친지분께 감사의 말씀을 드립니다.<br><br>
+
+        신랑 <span class="blank"></span> 군과 신부 <span class="blank"></span> 양은 일가친척과 친지를 모신 자리에서 일생 동안 고락을 함께 할 부부가 되기를 굳게 맹세하였습니다. 이에 본인은 이 혼인이 원만하게 이루어진 것을 여러분 앞에 엄숙하게 <span class="highlight">선언합니다.</span><br><br>
+
+        이제 부부가 된 신랑과 신부가 행복한 결혼 생활을 했으면 좋겠습니다. 양가 부모님을 마음으로 공경하고 형제들과 우애 있게 지내길 바랍니다.<br><br>
+
+        미래에 한 아이의 부모가 되면 건강하고 지혜롭게 키웠으면 합니다.<br><br>
+
+        마지막으로 곱게 기른 <span class="blank"></span>를 저희 집 식구로 보내주시는 사돈어른께도 감사의 인사를 드립니다.<br><br>
+
+        <span class="blank"></span>년 <span class="blank"></span>월 <span class="blank"></span>일<br>
+        <span class="blank" style="min-width:140px;"></span> (아버지 or 어머니)
+      </div>
+      <div class="declaration-seal">印</div>
+    </div>
+
+  </div>
+
+  <!-- ═══ 덕담 ═══ -->
+  <div id="tab-blessing" class="tab-content">
+    <div class="section-header">
+      <h2>부모님 덕담</h2>
+      <p>결혼식에서 부모님이 전하시는 따뜻한 덕담 예시</p>
+    </div>
+
+    <div class="sub-nav">
+      <button class="sub-tab active" onclick="showSub(event,'blessing','groom-father')">신랑 아버지</button>
+      <button class="sub-tab" onclick="showSub(event,'blessing','bride-father')">신부 아버지</button>
+    </div>
+
+    <!-- 신랑 아버지 -->
+    <div id="sub-blessing-groom-father" class="sub-content active">
+
+      <!-- 신랑 아버지 1 -->
+      <div class="blessing-card" id="gf1">
+        <button class="copy-btn" onclick="copyCard('gf1')">COPY</button>
+        <div class="card-number">1</div>
+        <div class="card-title">신랑 아버지 덕담</div>
+        <div class="card-subtitle">전통형 · 양가 대표 선언</div>
+
+        <div class="blessing-text">
+          <p>안녕하십니까. 신랑 아버지 <span class="blank"></span>입니다.</p>
+          <p>바쁜 주말인데도 불구하고 저희 아이들의 결혼을 축복해 주시기 위하여 이 자리에 참석해 주신 많은 내빈 여러분과 가족 친지께 양가를 대신하여 진심으로 감사드립니다.</p>
+          <p>바쁜 일 속에서도 아들과 함께하는 시간을 많이 갖고자 노력했는데, 더 많이 함께하지 못함에 아쉽기도 하지만 이렇게나 건강하고 반듯하게 자라준 아들이 기특하고 자랑스럽기만 합니다.</p>
+          <p>조금 전 양가 친지 및 하객 여러분을 모신 자리에서 신랑 <span class="blank"></span> 군과 신부 <span class="blank"></span> 양이 서로의 있는 모습 그대로를 이해하고 사랑하는 부부가 되겠다고 굳게 맹세했습니다. 서로에게 한 다른 약속들 또한 잘 지킬 것이라고 저는 믿습니다.</p>
+          <p>이에 양가 가족을 대표하여 두 사람이 아주 예쁜 부부가 되었음을 여러분 앞에 엄숙히 선언합니다. 새롭게 태어난 이들 부부가 행복한 삶을 살아갈 수 있도록 하객 여러분께서도 두 사람의 앞길을 축복해 주십시오. 감사합니다!</p>
+        </div>
+      </div>
+
+      <!-- 신랑 아버지 2 -->
+      <div class="blessing-card" id="gf2">
+        <button class="copy-btn" onclick="copyCard('gf2')">COPY</button>
+        <div class="card-number">2</div>
+        <div class="card-title">신랑 아버지 덕담</div>
+        <div class="card-subtitle">감사·부탁형 · 편하고 진솔한 어조</div>
+
+        <div class="blessing-text">
+          <p>반갑습니다. 바쁘신 주말에 시간 내어 저희 자녀들 결혼식을 빛내주신 여러 친지분들과 하객분들에게 깊이 감사드립니다.</p>
+          <p>오늘 저의 아들이 장가가는 날입니다. 예쁘고 착한 딸 하나 얻는 날이기에 기분 정말 좋습니다. 예쁘고 착한 딸아이를 며느리로 보내주신 사돈어른께 감사드립니다.</p>
+          <p>특이하게, 주례 없이 부모님 덕담으로 한다기에 말주변이 없는 저로서는 무슨 말을 해야 할지 막막하기만 했습니다만 덕담이라기보다는 감사와 부탁의 말씀을 전달하려 합니다.</p>
+          <p>오늘 며느리와 아들이 자식으로서의 단계를 마치고, 부부로서의 인생이 시작되는 의미 있는 날입니다. 이제 신랑 신부는 매일매일 행복하고 건강해야 합니다. 그리고 부모로서의 더 가치 있는 삶이 기다리고 있으니 잘 준비하고 현명한 부모가 되기를 바랍니다.</p>
+          <p>끝으로, 아들과 며느리에게 한 마디 하겠습니다. 서로 사랑해서 하는 결혼이기에 서로가 선택한 사랑, 영원히 함께해라. 그리고 항상 예쁘고 착한 일만 하길 바란다. 고맙습니다.</p>
+        </div>
+      </div>
+
+      <!-- 신랑 아버지 3 -->
+      <div class="blessing-card" id="gf3">
+        <button class="copy-btn" onclick="copyCard('gf3')">COPY</button>
+        <div class="card-number">3</div>
+        <div class="card-title">신랑 아버지 덕담</div>
+        <div class="card-subtitle">편지형 · 아들·며느리에게 전하는 말</div>
+
+        <div class="blessing-text">
+          <p>신랑 아버지, <span class="blank"></span>입니다.</p>
+          <p>바쁘신 가운데도 불구하고 저희 아이들의 결혼식에 참석하여 주신 일가친척 및 친지 여러분들에게 진심으로 감사의 말씀을 드립니다.</p>
+          <p>저희 아이들이 주례 없이, 의미 있고 뜻깊은 부모님의 말씀을 듣고자 한다 하여 말주변이 없는 저로서는 무슨 말을 먼저 해야 할지 막막합니다.</p>
+          <p><span class="blessing-address">사랑하는 아들 <span class="blank"></span>야.</span><br>
+          네가 어느덧 자라서 이렇게 많은 분들의 축복 속에 결혼식을 올리고 새 가정을 꾸린다고 생각하니 머릿속에 많은 생각이 떠오르고 만감이 교차하는구나. 항상 지금처럼 서로를 위하고 아끼며 행복하게 살길 바라고 두 사람 앞에 다가오는 일들을 슬기롭게 잘 헤쳐 나가리라 믿는다. 항상 아내의 편에 서서 보듬어 주고 네 아이의 엄마가 될 아내를 아껴주고 아내가 힘들 때 위로해 주는 책임감이 있는 남편이 되길 바란다.</p>
+          <p><span class="blessing-address">다음으로 나의 며느리이자 딸인 <span class="blank"></span>야.</span><br>
+          아들이 좋은 반려자를 만난 것도 기분이 좋은 일이지만, 나로서는 네가 예쁜 막내딸로 우리 집에 와주어 더욱 기쁜 마음이 드는구나. 남편이 없을 때 남편을 칭찬하고 남편이 있을 때 남편을 존경하고 남편이 괴로워할 때 남편을 잘 위로해 주며, 남편이 아플 때 남편을 돕는 그런 지혜롭고 현명한 아내가 되어다오. 나는 항상 너희 부부의 건강과 행복을 염원하고 화목한 가정 안에서 훌륭한 아빠 엄마가 되길 기도할 것이다.</p>
+          <p>끝으로, 귀히 키우신 따님을 저희 가정에 보내주신 사돈어른께 이 자리를 빌려 감사의 인사를 드립니다. 아울러 귀한 시간을 내어 이 자리에서 함께 축복해 주신 친척 및 친지 여러분께서도 항상 건강하시고 모든 가정에 행복이 가득하시길 빌며, 덕담을 마치겠습니다. 감사합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 신부 아버지 -->
+    <div id="sub-blessing-bride-father" class="sub-content">
+      <div class="blessing-card" id="bf1">
+        <button class="copy-btn" onclick="copyCard('bf1')">COPY</button>
+        <div class="card-number">1</div>
+        <div class="card-title">신부 아버지 덕담</div>
+        <div class="card-subtitle">편지형 · 사위에게 전하는 말</div>
+
+        <div class="blessing-text">
+          <p><span class="blessing-address">우리 사위 <span class="blank"></span>야.</span></p>
+          <p>내 딸이 좋은 반려자를 만나게 되어 더할 나위 없이 기쁘구나.</p>
+          <p>지난 <span class="blank"></span>년 두 사람이 잘 지내는 모습을 보면서 앞으로도 서로 보듬어가며 잘 살 거라 아버지는 확신한다.</p>
+          <p>부족한 부분이 있더라도 서로 상처 주는 말은 하지 말고 대화를 많이 하며 지금처럼 언제나 같은 편이 되거라.</p>
+          <p>오늘 이 자리의 의미가 거듭 빛나게 되는 화목한 부부가 되기를 바란다.</p>
+          <p>끝으로 지금 이 자리에 오기까지 고생하신 나의 아내와 반듯한 아들로 훌륭하게 키워주신 사돈 내외분께 진심으로 감사의 말씀을 드리며, 이 자리를 빛내주신 하객분들께 다시 한번 감사드립니다.</p>
+          <p style="margin-top: 28px; color: var(--text-3); text-align: right;">
+            ______년 ____ 월 ____ 일<br>
+            신부 아버지 ________
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
 </div>
 
-<div class="footer">WEDDING CEREMONY GUIDE</div>
+<div class="footer">
+  WEDDING CEREMONY GUIDE
+  <span class="by">사회 · 배진솔</span>
+</div>
 
 <script>
-function showTab(name) {
-    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('tab-' + name).classList.add('active');
-    event.target.classList.add('active');
+function showTab(e, name) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  e.target.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function showSub(parent, sub) {
-    const p = document.getElementById('tab-' + parent);
-    p.querySelectorAll('.sub-content').forEach(s => s.classList.remove('active'));
-    p.querySelectorAll('.sub-tab').forEach(s => s.classList.remove('active'));
-    document.getElementById('sub-' + parent + '-' + sub).classList.add('active');
-    event.target.classList.add('active');
+function showSub(e, parent, sub) {
+  const p = document.getElementById('tab-' + parent);
+  p.querySelectorAll('.sub-content').forEach(s => s.classList.remove('active'));
+  p.querySelectorAll('.sub-tab').forEach(s => s.classList.remove('active'));
+  document.getElementById('sub-' + parent + '-' + sub).classList.add('active');
+  e.target.classList.add('active');
 }
 
 function copyCard(id) {
-    const card = document.getElementById(id);
-    const btn = card.querySelector('.copy-btn');
-    const clone = card.cloneNode(true);
-    clone.querySelectorAll('.copy-btn, .card-number').forEach(el => el.remove());
+  const card = document.getElementById(id);
+  const btn = card.querySelector('.copy-btn');
+  const clone = card.cloneNode(true);
+  clone.querySelectorAll('.copy-btn, .card-number').forEach(el => el.remove());
 
-    const lines = [];
-    clone.querySelectorAll('.card-title').forEach(el => lines.push(el.textContent.trim()));
+  const lines = [];
+  const title = clone.querySelector('.card-title');
+  if (title) lines.push(title.textContent.trim());
+  lines.push('');
+
+  // 혼인서약서 - vow-line
+  clone.querySelectorAll('.vow-section-label').forEach(el => {
     lines.push('');
+    lines.push('[ ' + el.textContent.trim() + ' ]');
+  });
 
-    clone.querySelectorAll('.vow-line, .declaration-text, .blessing-text p, .mc-vow .mc-names, .mc-vow .mc-body, .mc-vow .mc-question, .mc-vow .mc-closing').forEach(el => {
-        const t = el.textContent.trim().replace(/\s+/g, ' ');
-        if (t) lines.push(t);
+  clone.querySelectorAll('.vow-line').forEach(el => {
+    const speaker = el.querySelector('.speaker');
+    const text = el.querySelector('.text');
+    if (!text) return;
+    const speakerText = speaker ? speaker.textContent.trim() : '';
+    const textContent = text.textContent.trim().replace(/\s+/g, ' ');
+    if (speakerText) {
+      lines.push(speakerText + ' : ' + textContent);
+    } else {
+      lines.push(textContent);
+    }
+  });
+
+  // 중앙 정렬 블록
+  clone.querySelectorAll('.vow-centered').forEach(el => {
+    const t = el.textContent.trim().replace(/\s+/g, ' ');
+    if (t) lines.push(t);
+  });
+
+  // 선언문 / 덕담 / MC 서약
+  clone.querySelectorAll('.declaration-text, .blessing-text, .mc-vow').forEach(el => {
+    const t = el.textContent.trim().replace(/\s+/g, ' ');
+    if (t) lines.push(t);
+  });
+
+  // 서명라인
+  clone.querySelectorAll('.signature-line').forEach(el => {
+    lines.push('');
+    lines.push(el.textContent.trim());
+  });
+
+  const text = lines.filter(l => l !== undefined).join('\n');
+
+  const done = () => {
+    const original = btn.textContent;
+    btn.textContent = 'COPIED';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'COPY'; btn.classList.remove('copied'); }, 2000);
+  };
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(() => {
+      fallbackCopy(text); done();
     });
+  } else {
+    fallbackCopy(text); done();
+  }
+}
 
-    clone.querySelectorAll('.signature-line').forEach(el => {
-        lines.push('');
-        lines.push(el.textContent.trim());
-    });
-
-    const text = lines.join('\n');
-
-    navigator.clipboard.writeText(text).then(() => {
-        btn.textContent = 'COPIED';
-        btn.classList.add('copied');
-        setTimeout(() => { btn.textContent = 'COPY'; btn.classList.remove('copied'); }, 2000);
-    }).catch(() => {
-        const ta = document.createElement('textarea');
-        ta.value = text;
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-        btn.textContent = 'COPIED';
-        btn.classList.add('copied');
-        setTimeout(() => { btn.textContent = 'COPY'; btn.classList.remove('copied'); }, 2000);
-    });
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); } catch(e){}
+  document.body.removeChild(ta);
 }
 </script>
 
